@@ -1,0 +1,71 @@
+/* media/settingsView.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body.vscode-body {
+    padding: 10px;
+    color: var(--vscode-foreground);
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+    font-weight: var(--vscode-font-weight);
+    line-height: 1.4;
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--vscode-sideBarTitle-foreground);
+}
+
+.section-content {
+    margin-left: 8px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--vscode-input-foreground);
+}
+
+.text-input,
+.select-input {
+    width: 100%;
+    padding: 4px 8px;
+    background-color: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+    border: 1px solid var(--vscode-input-border);
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background-color: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    cursor: pointer;
+    font-family: var(--vscode-font-family);
+    font-size: var(--vscode-font-size);
+}
+
+.button:hover {
+    background-color: var(--vscode-button-hoverBackground);
+}
+
+.button .codicon {
+    margin-right: 6px;
+}

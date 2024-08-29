@@ -2,7 +2,7 @@
     "name": "diffscribe",
     "displayName": "DiffScribe",
     "description": "A VS Code extension that uses AI to automatically generate meaningful Git commit messages based on staged changes.",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.92.0"
     },
@@ -10,8 +10,14 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:diffscribe.generateCommitMessage"
+        "onView:diffscribe.settingsView",
+        "onCommand:diffscribe.generateCommitMessage",
+        "onCommand:diffscribe.generateCommitMessageSinceLastPush",
+        "onCommand:diffscribe.generateCommitMessageCustomTime",
+        "onCommand:diffscribe.setApiKeys",
+        "onCommand:diffscribe.showSettings"
     ],
+    "icon": "media/diffscribe-icon.svg",
     "main": "./dist/extension.js",
     "contributes": {
         "commands": [
@@ -30,6 +36,34 @@
             {
                 "command": "diffscribe.setApiKeys",
                 "title": "DiffScribe: Set API Keys"
+            },
+            {
+                "command": "diffscribe.showSettings",
+                "title": "DiffScribe: Show Settings"
+            }
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "diffscribe-settings",
+                    "title": "DiffScribe",
+                    "icon": "media/diffscribe-icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "diffscribe-settings": [
+                {
+                    "type": "webview",
+                    "id": "diffscribe.settingsView",
+                    "name": "Settings"
+                }
+            ]
+        },
+        "resources": [
+            {
+                "path": "media/settingsView.css",
+                "type": "style"
             }
         ],
         "configuration": {
@@ -37,16 +71,19 @@
             "properties": {
                 "diffscribe.llmProvider": {
                     "type": "string",
-                    "default": "claude",
-                    "enum": ["claude", "groq"],
+                    "default": "ANTHROPIC",
+                    "enum": [
+                        "ANTHROPIC",
+                        "GROQ"
+                    ],
                     "description": "Select the LLM provider to use for generating commit messages."
                 },
-                "diffscribe.claudeApiKey": {
+                "diffscribe.ANTHROPIC_API_KEY": {
                     "type": "string",
                     "default": "",
                     "description": "API key for Claude (Anthropic) LLM provider."
                 },
-                "diffscribe.groqApiKey": {
+                "diffscribe.GROQ_API_KEY": {
                     "type": "string",
                     "default": "",
                     "description": "API key for Groq LLM provider."
@@ -81,6 +118,7 @@
     },
     "dependencies": {
         "@anthropic-ai/sdk": "^0.27.1",
+        "@vscode/codicons": "^0.0.36",
         "groq-sdk": "^0.6.1"
     }
 }
