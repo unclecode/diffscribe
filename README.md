@@ -1,7 +1,6 @@
+![DiffScribe Banner](assets/banner.jpeg)
 
 # 🧠 DiffScribe: AI-Powered Commit Messages
-
-![DiffScribe Banner](assets/banner.jpeg)
 
 We've all been there. Staring at the screen, fingers hovering over the keyboard, trying to come up with the perfect commit message. Minutes tick by, and the pressure mounts. Sound familiar? 
 
@@ -32,12 +31,42 @@ DiffScribe is here to rescue you from the commit message abyss. This intelligent
 3. Choose your preferred AI provider in the settings
 4. Start generating awesome commit messages!
 
-## 💡 Usage
+## 💡 How to Use DiffScribe
 
-- Use the command palette to generate messages for staged changes
-- Select custom time ranges to capture all your recent work
-- Choose to commit directly or copy the message to clipboard
-- Quickly edit generated messages if needed before committing
+DiffScribe offers several commands to help you generate commit messages and manage your git workflow. Here's how to use them:
+
+1. **Generate Commit Message (Staged Changes)**
+   - Command: `diffscribe.generateCommitMessage`
+   - Shortcut: `Ctrl+Alt+G` (Windows/Linux) or `Cmd+Option+G` (Mac)
+   - Description: Generates a commit message based on your currently staged changes.
+
+2. **Generate Commit Message (Since Last Push)**
+   - Command: `diffscribe.generateCommitMessageSinceLastPush`
+   - Description: Creates a commit message that summarizes all changes since your last push.
+
+3. **Generate Commit Message (Custom Time Range)**
+   - Command: `diffscribe.generateCommitMessageCustomTime`
+   - Description: Allows you to specify a custom time range and generates a commit message for changes within that period.
+
+4. **Set API Keys**
+   - Command: `diffscribe.setApiKeys`
+   - Description: Opens a prompt to set or update your API keys for the AI providers.
+
+5. **Show Settings**
+   - Command: `diffscribe.showSettings`
+   - Description: Opens the DiffScribe settings panel where you can configure the extension.
+
+To use these commands:
+1. Open the Command Palette in VS Code (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac)
+2. Type "DiffScribe" to see all available commands
+3. Select the command you want to use
+
+Alternatively, you can use the provided shortcut for generating commit messages from staged changes.
+
+After generating a message, DiffScribe will present options to:
+- Copy the message to your clipboard
+- Commit changes with the generated message
+- Edit the message before committing
 
 ## 🔑 API Key Setup
 
