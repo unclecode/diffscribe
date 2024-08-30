@@ -1,6 +1,6 @@
 ![DiffScribe Banner](assets/banner.jpeg)
 
-# 🧠 DiffScribe: AI-Powered Commit Messages
+# 🧠 DiffScribe: AI-Powered Commit Messages For All Seasons
 
 We've all been there. Staring at the screen, fingers hovering over the keyboard, trying to come up with the perfect commit message. Minutes tick by, and the pressure mounts. Sound familiar? 
 
