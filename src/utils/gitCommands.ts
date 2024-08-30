@@ -9,7 +9,7 @@ import * as cp from 'child_process';
 export async function executeGitCommand(command: string): Promise<string> {
     return new Promise((resolve, reject) => {
         const workspacePath = vscode.workspace.rootPath;
-        
+
         if (!workspacePath) {
             reject(new Error('No workspace is currently open.'));
             return;
@@ -56,6 +56,7 @@ export async function getDiffForTimeRange(timeRange: string): Promise<string> {
  * @returns A promise that resolves when the commit is successful or rejects with an error.
  */
 export async function commitChanges(message: string): Promise<void> {
-    const escapedMessage = message.replace(/"/g, '\\"');
-    await executeGitCommand(`git commit -m "${escapedMessage}"`);
+    // Escape single quotes and wrap the entire message in single quotes
+    const escapedMessage = message.replace(/'/g, "'\\''");
+    await executeGitCommand(`git commit -m '${escapedMessage}'`);
 }

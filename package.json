@@ -17,7 +17,7 @@
         "onCommand:diffscribe.setApiKeys",
         "onCommand:diffscribe.showSettings"
     ],
-    "icon": "media/diffscribe-icon.svg",
+    "icon": "media/diffscribe-icon.png",
     "main": "./dist/extension.js",
     "contributes": {
         "commands": [
@@ -47,7 +47,7 @@
                 {
                     "id": "diffscribe-settings",
                     "title": "DiffScribe",
-                    "icon": "media/diffscribe-icon.svg"
+                    "icon": "media/diffscribe-icon.png"
                 }
             ]
         },
